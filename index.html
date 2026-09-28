@@ -144,6 +144,16 @@
       margin-bottom: 25px;
     }
 
+    h2::after {
+      content: "";
+      display: block;
+      width: 42px;
+      height: 3px;
+      background: #1769aa;
+      margin-top: 7px;
+      border-radius: 2px;
+    }
+
     h3 {
       margin-bottom: 5px;
     }
@@ -289,7 +299,21 @@
 
     /* Education */
     .education-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
       margin-bottom: 22px;
+    }
+
+    .school-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .education-info {
+      flex: 1;
     }
 
     .school {
@@ -431,9 +455,13 @@
               Google Scholar
             </a>
 
-            <a href="cv_Yeojin_Jung_noprofile.pdf" target="_blank">
+            <a href="cv_yeojin_0928.pdf" target="_blank">
               CV
             </a>
+
+            <span style="color:#888; font-size:13px;">
+              (Last updated: Sep 28, 2026)
+            </span>
           </div>
 
         </div>
@@ -528,7 +556,10 @@
 
           <div class="authors">
             <strong>Yeojin Jung*</strong>, Namkyeong Kim*, and Donghoon Kim
-            (*Equal contribution)
+            <br>
+            <span style="font-size:14px; color:#777;">
+              *Equal contribution
+            </span>
           </div>
 
           <div class="venue">
@@ -571,7 +602,8 @@
         </div>
 
         <div class="item-subtitle">
-          Arkansas State University · Advisor: Prof. Donghoon Kim
+          Arkansas State University · Advisor:
+          <span style="color:#1769aa;">Prof. Donghoon Kim</span>
         </div>
 
         <ul>
@@ -581,18 +613,13 @@
           </li>
 
           <li>
-            Develop and evaluate machine learning and deep learning
-            models for antimicrobial resistance prediction.
+            Develop machine learning and deep learning models and build
+            genomic data preprocessing and evaluation pipelines.
           </li>
 
           <li>
-            Design genomic feature extraction, preprocessing,
-            augmentation, and model evaluation pipelines.
-          </li>
-
-          <li>
-            Conduct experimental analysis and contribute to research
-            publications and presentations.
+            Extend earlier binary AMR prediction into a multi-label framework,
+            building on our ACM-BCB Companion 2025 work and leading to IEEE BIBM 2026.
           </li>
         </ul>
 
@@ -811,25 +838,33 @@
 
     </section>
 
-
     <!-- Education -->
     <section id="education">
 
       <h2>Education</h2>
 
-
       <div class="education-row">
 
-        <div class="school">
-          Arkansas State University
-        </div>
+        <img
+          src="astate_logo.jpg"
+          alt="Arkansas State University logo"
+          class="school-logo"
+        >
 
-        <div>
-          B.S. in Computer Science
-        </div>
+        <div class="education-info">
 
-        <div>
-          Aug 2024 – Dec 2026 (Expected)
+          <div class="school">
+            Arkansas State University
+          </div>
+
+          <div>
+            B.S. in Computer Science
+          </div>
+
+          <div>
+            Aug 2024 – Dec 2026 (Expected)
+          </div>
+
         </div>
 
       </div>
@@ -837,16 +872,26 @@
 
       <div class="education-row">
 
-        <div class="school">
-          Sangmyung University
-        </div>
+        <img
+          src="sangmyung_logo.jpg"
+          alt="Sangmyung University logo"
+          class="school-logo"
+        >
 
-        <div>
-          Coursework in Human-Centered Artificial Intelligence
-        </div>
+        <div class="education-info">
 
-        <div>
-          Mar 2022 – Dec 2023
+          <div class="school">
+            Sangmyung University
+          </div>
+
+          <div>
+            Coursework in Human-Centered Artificial Intelligence
+          </div>
+
+          <div>
+            Mar 2022 – Dec 2023
+          </div>
+
         </div>
 
       </div>
