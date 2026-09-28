@@ -197,6 +197,13 @@
       font-size: 14px;
     }
 
+    .acceptance-rate {
+      margin-top: 6px;
+      color: #1769aa;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
     /* Presentations */
     .presentation-item {
       display: flex;
@@ -219,6 +226,28 @@
     }
 
     /* Research / projects */
+    .project-with-video {
+      display: flex;
+      gap: 25px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .project-video {
+      width: 180px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 4px;
+      border: 1px solid #e5e5e5;
+      flex-shrink: 0;
+      background: #000;
+    }
+
+    .project-content {
+      flex: 1;
+      min-width: 0;
+    }
+    
     .item {
       margin-bottom: 28px;
     }
@@ -326,6 +355,11 @@
         max-width: 220px;
         height: auto;
       }
+
+      .project-with-video {
+        flex-direction: column;
+        gap: 15px;
+      }
     }
   </style>
 </head>
@@ -370,17 +404,10 @@
             Arkansas State University
           </div>
 
-          <p>
-            I am interested in developing intelligent systems that can
-            understand visual information, reason about human and object
-            interactions over time, and connect visual understanding to
-            intelligent decision-making and action.
-          </p>
-
           <div class="interests">
+            <span>Machine Learning</span>
             <span>Computer Vision</span>
             <span>Video Understanding</span>
-            <span>Embodied AI</span>
           </div>
 
           <div class="links">
@@ -419,24 +446,19 @@
       <h2>About Me</h2>
 
       <p>
-        I am a Computer Science undergraduate at Arkansas State University,
-        graduating in December 2026. I am currently an undergraduate
-        research assistant advised by Dr. Donghoon Kim.
+        I am a Computer Science undergraduate at Arkansas State University 
+        and an undergraduate research assistant advised by Prof. Donghoon Kim.
       </p>
 
       <p>
-        My research experience has focused on machine learning and deep
-        learning for antimicrobial resistance prediction using bacterial
-        whole-genome sequencing data. Through this work, I have gained
-        experience in data preprocessing, model development, experimental
-        design, evaluation, and scientific writing.
+        My research interests lie in Machine Learning, Computer Vision, and Video Understanding. 
+        I am particularly interested in using visual information to understand and model human 
+        and object behaviors and interactions over time.
       </p>
 
       <p>
-        My current research interests include Computer Vision, Video
-        Understanding, and Embodied AI. I am particularly interested in
-        understanding human and object behaviors from visual information
-        and modeling how actions and interactions evolve over time.
+        My long-term goal is to connect visual understanding with decision-making and action
+        in embodied AI systems.
       </p>
 
     </section>
@@ -471,9 +493,9 @@
             (IEEE BIBM), 2026 — Regular Paper
           </div>
 
-          <p>
+          <div class="acceptance-rate">
             Acceptance rate: 19.48% (480 / 2,463)
-          </p>
+          </div>
 
         </div>
 
@@ -711,58 +733,69 @@
 
       </div>
 
-
       <div class="item">
 
         <div class="item-header">
 
           <div class="item-title">
-            Multi-Label Antimicrobial Resistance Prediction
+            AMR Prediction Web Application
           </div>
 
           <div class="date">
-            Jan 2026 – Present
+            Sep 2026 – Present
           </div>
 
         </div>
 
         <div class="item-subtitle">
-          Python · PyTorch · scikit-learn
+          Python · PyTorch · Deep Learning
         </div>
 
         <p>
-          Developed and evaluated multi-label machine learning and deep
-          learning models including CNN, MLP, FT-Transformer, ResNet,
-          and tree-based models for predicting resistance to multiple
-          antibiotics.
+          Contributing to the development of a web-based antimicrobial resistance prediction system 
+          by preparing and providing inference code for trained deep learning models developed 
+          through our AMR research.
         </p>
 
       </div>
 
+      <div class="project-with-video">
 
-      <div class="item">
+        <video
+          class="project-video"
+          autoplay
+          muted
+          loop
+          playsinline
+        >
+          <source src="cctv_demo.mp4" type="video/mp4">
+        </video>
 
-        <div class="item-header">
+        <div class="project-content">
 
-          <div class="item-title">
-            CCTV-Based Abnormal Driving Behavior Detection
+          <div class="item-header">
+
+            <div class="item-title">
+              CCTV-Based Abnormal Driving Behavior Detection
+            </div>
+
+            <div class="date">
+              May 2023 – Sep 2023
+            </div>
+
           </div>
 
-          <div class="date">
-            May 2023 – Sep 2023
+          <div class="item-subtitle">
+            AWS & KT AICE Big Data AI Competition · Computer Vision
           </div>
 
-        </div>
+          <p>
+            Led a student team in developing a computer vision system for
+            analyzing abnormal vehicle behavior from CCTV footage using
+            vehicle detection, tracking, and trajectory analysis.
+          </p>
 
-        <div class="item-subtitle">
-          AWS & KT AICE Big Data AI Competition · Computer Vision
         </div>
-
-        <p>
-          Led a student team in developing a computer vision system for
-          analyzing abnormal vehicle behavior from CCTV footage using
-          vehicle detection, tracking, and trajectory analysis.
-        </p>
 
       </div>
 
@@ -822,11 +855,6 @@
       </div>
 
       <div class="award">
-        <strong>3rd Place Poster Award</strong>,
-        CREATE@State Symposium — 2025
-      </div>
-
-      <div class="award">
         <strong>Grand Prize</strong>,
         SW-Centered University Generative AI Utilization Contest — 2023
       </div>
@@ -845,6 +873,10 @@
   <footer>
     © 2026 Yeojin Jung
   </footer>
+
+  <script>
+    document.querySelector('.project-video').playbackRate = 1.5;
+  </script>
 
 </body>
 </html>
