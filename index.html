@@ -83,9 +83,8 @@
     }
 
     .profile-photo {
-      width: 210px;
-      height: 210px;
-      object-fit: cover;
+      width: 220px;
+      height: auto;
       border-radius: 12px;
       flex-shrink: 0;
     }
@@ -147,8 +146,27 @@
     }
 
     /* Publications */
-    .publication {
-      margin-bottom: 28px;
+
+    .publication-item {
+      display: flex;
+      gap: 25px;
+      align-items: flex-start;
+      margin-bottom: 32px;
+    }
+    
+    .paper-thumbnail {
+      width: 180px;
+      height: 115px;
+      object-fit: contain;
+      border-radius: 4px;
+      border: 1px solid #e5e5e5;
+      flex-shrink: 0;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .publication-info {
+      flex: 1;
     }
 
     .publication-title {
@@ -174,6 +192,27 @@
     .pub-links a {
       margin-right: 12px;
       font-size: 14px;
+    }
+
+    /* Presentations */
+    .presentation-item {
+      display: flex;
+      gap: 25px;
+      align-items: flex-start;
+      margin-bottom: 32px;
+    }
+
+    .poster-thumbnail {
+      width: 135px;
+      height: auto;
+      border-radius: 4px;
+      border: 1px solid #e5e5e5;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .presentation-info {
+      flex: 1;
     }
 
     /* Research / projects */
@@ -260,7 +299,29 @@
 
       .profile-photo {
         width: 160px;
-        height: 160px;
+        height: auto;
+      }
+
+      .publication-item {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .paper-thumbnail {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+      }
+
+      .presentation-item {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .poster-thumbnail {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
       }
     }
   </style>
@@ -278,6 +339,7 @@
         <a href="#about">About</a>
         <a href="#publications">Publications</a>
         <a href="#research">Research</a>
+        <a href="#presentations">Presentations</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
         <a href="#awards">Awards</a>
@@ -289,64 +351,63 @@
   <main class="container">
 
     <!-- Header -->
-<header class="hero">
+    <header class="hero">
 
-  <div class="hero-content">
+      <div class="hero-content">
 
-    <div class="hero-text">
+        <div class="hero-text">
 
-      <h1>Yeojin Jung</h1>
+          <h1>Yeojin Jung</h1>
 
-      <div class="subtitle">
-        Undergraduate Researcher in Computer Science
+          <div class="subtitle">
+            Undergraduate Researcher in Computer Science
+          </div>
+
+          <div class="university">
+            Arkansas State University
+          </div>
+
+          <p>
+            I am interested in developing intelligent systems that can
+            understand visual information, reason about human and object
+            interactions over time, and connect visual understanding to
+            intelligent decision-making and action.
+          </p>
+
+          <div class="interests">
+            <span>Computer Vision</span>
+            <span>Video Understanding</span>
+            <span>Embodied AI</span>
+          </div>
+
+          <div class="links">
+            <a href="mailto:jyjrun21@gmail.com">Email</a>
+
+            <a href="https://github.com/Yeojin-YJJ" target="_blank">
+              GitHub
+            </a>
+
+            <a href="https://scholar.google.com/citations?user=9p6XmAYAAAAJ" target="_blank">
+              Google Scholar
+            </a>
+
+            <a href="cv_Yeojin_Jung_noprofile.pdf" target="_blank">
+              CV
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Profile Photo -->
+        <img
+          src="profile.jpg"
+          alt="Yeojin Jung"
+          class="profile-photo"
+        >
+
       </div>
 
-      <div class="university">
-        Arkansas State University
-      </div>
-
-      <p>
-        I am interested in developing intelligent systems that can
-        understand visual information, reason about human and object
-        interactions over time, and connect visual understanding to
-        intelligent decision-making and action.
-      </p>
-
-      <div class="interests">
-        <span>Computer Vision</span>
-        <span>Video Understanding</span>
-        <span>Temporal Action Understanding</span>
-        <span>Embodied AI</span>
-      </div>
-
-      <div class="links">
-        <a href="mailto:jyjrun21@gmail.com">Email</a>
-
-        <a href="https://github.com/Yeojin-YJJ" target="_blank">
-          GitHub
-        </a>
-
-        <a href="#" target="_blank">
-          Google Scholar
-        </a>
-
-        <a href="#">
-          CV
-        </a>
-      </div>
-
-    </div>
-
-    <!-- Profile Photo -->
-    <img
-      src="profile.jpg"
-      alt="Yeojin Jung"
-      class="profile-photo"
-    >
-
-  </div>
-
-</header>
+    </header>
 
 
     <!-- About -->
@@ -357,7 +418,7 @@
       <p>
         I am a Computer Science undergraduate at Arkansas State University,
         graduating in December 2026. I am currently an undergraduate
-        research assistant advised by Prof. Donghoon Kim.
+        research assistant advised by Dr. Donghoon Kim.
       </p>
 
       <p>
@@ -384,56 +445,78 @@
       <h2>Publications</h2>
 
 
-      <div class="publication">
+      <div class="publication-item">
 
-        <div class="publication-title">
-          Multi-Label Antimicrobial Resistance Prediction for
-          Antibiotic Prioritization
+        <a href="bibm2026.jpg" target="_blank">
+          <img
+            src="bibm2026.jpg"
+            alt="Multi-Label AMR Prediction"
+            class="paper-thumbnail"
+          >
+        </a>
+
+        <div class="publication-info">
+
+          <div class="publication-title">
+            Multi-Label Antimicrobial Resistance Prediction for
+            Antibiotic Prioritization
+          </div>
+
+          <div class="authors">
+            <strong>Yeojin Jung</strong>, Chia Lee, and Donghoon Kim
+          </div>
+
+          <div class="venue">
+            IEEE International Conference on Bioinformatics and Biomedicine
+            (IEEE BIBM), 2026 — Regular Paper
+          </div>
+
+          <p>
+            Acceptance rate: 19.48% (480 / 2,463)
+          </p>
+
         </div>
-
-        <div class="authors">
-          <strong>Yeojin Jung</strong>, Chia Lee, and Donghoon Kim
-        </div>
-
-        <div class="venue">
-          IEEE International Conference on Bioinformatics and Biomedicine
-          (IEEE BIBM), 2026 — Regular Paper
-        </div>
-
-        <p>
-          Acceptance rate: 19.48% (480 / 2,463)
-        </p>
 
       </div>
 
+      <div class="publication-item">
 
-      <div class="publication">
+        <a href="acmbcb2025.jpg" target="_blank">
+          <img
+            src="acmbcb2025.jpg"
+            alt="AMR Phenotype Prediction for Unseen Bacteria"
+            class="paper-thumbnail"
+          >
+        </a>
 
-        <div class="publication-title">
-          Improving Antimicrobial Resistance (AMR) Phenotype Prediction
-          for Unseen Bacteria through Data Augmentation and Machine Learning
-        </div>
+        <div class="publication-info">
 
-        <div class="authors">
-          <strong>Yeojin Jung*</strong>, Namkyeong Kim*, and Donghoon Kim
-          (*Equal contribution)
-        </div>
+          <div class="publication-title">
+            Improving Antimicrobial Resistance (AMR) Phenotype Prediction
+            for Unseen Bacteria through Data Augmentation and Machine Learning
+          </div>
 
-        <div class="venue">
-          ACM-BCB Companion 2025, ParBio Workshop
-        </div>
+          <div class="authors">
+            <strong>Yeojin Jung*</strong>, Namkyeong Kim*, and Donghoon Kim
+            (*Equal contribution)
+          </div>
 
-        <div class="pub-links">
-          <a href="https://doi.org/10.1145/3768322.3769015"
-             target="_blank">
-            Paper
-          </a>
+          <div class="venue">
+            ACM-BCB Companion 2025, ParBio Workshop
+          </div>
+
+          <div class="pub-links">
+            <a href="https://doi.org/10.1145/3768322.3769015"
+               target="_blank">
+              Paper
+            </a>
+          </div>
+
         </div>
 
       </div>
 
     </section>
-
 
     <!-- Research -->
     <section id="research">
@@ -480,6 +563,117 @@
             publications and presentations.
           </li>
         </ul>
+
+      </div>
+
+    </section>
+
+    <!-- Presentations -->
+    <section id="presentations">
+
+      <h2>Presentations</h2>
+
+      <div class="presentation-item">
+        <a href="create2026.jpg" target="_blank">
+          <img
+            src="create2026.jpg"
+            alt="CREATE@State Symposium 2026 Poster"
+            class="poster-thumbnail"
+          >
+        </a>
+
+        <div class="presentation-info">
+
+          <div class="item-header">
+            <div class="item-title">
+              CREATE@State Symposium
+            </div>
+
+            <div class="date">
+              2026
+            </div>
+          </div>
+
+          <div class="item-subtitle">
+            Arkansas State University
+          </div>
+
+          <p>
+            Presented undergraduate research on antimicrobial resistance
+            prediction using machine learning and deep learning.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="presentation-item">
+
+        <a href="create2025.jpg" target="_blank">
+          <img
+            src="create2025.jpg"
+            alt="CREATE@State Symposium 2025 Poster"
+            class="poster-thumbnail"
+          >
+        </a>
+
+        <div class="presentation-info">
+
+          <div class="item-header">
+            <div class="item-title">
+              CREATE@State Symposium
+            </div>
+
+            <div class="date">
+              2025
+            </div>
+          </div>
+
+          <div class="item-subtitle">
+            Arkansas State University · 3rd Place Poster Award
+          </div>
+
+          <p>
+            Presented research on antimicrobial resistance phenotype prediction
+            using bacterial whole-genome sequencing data.
+          </p>
+
+        </div>
+
+      </div>
+      
+      <div class="presentation-item">
+
+        <a href="capitol2025.jpg" target="_blank">
+          <img
+            src="capitol2025.jpg"
+            alt="STEM Posters at the Capitol 2025"
+            class="poster-thumbnail"
+          >
+        </a>
+
+        <div class="presentation-info">
+
+          <div class="item-header">
+            <div class="item-title">
+              STEM Posters at the Capitol
+            </div>
+
+            <div class="date">
+              2025
+            </div>
+          </div>
+
+          <div class="item-subtitle">
+            Little Rock, Arkansas
+          </div>
+
+          <p>
+            Presented undergraduate research on antimicrobial resistance
+            prediction using machine learning.
+          </p>
+
+        </div>
 
       </div>
 
