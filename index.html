@@ -6,6 +6,8 @@
 
   <title>Yeojin Jung</title>
 
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
     * {
       box-sizing: border-box;
@@ -51,10 +53,16 @@
       align-items: center;
     }
 
-    .nav-name {
-      font-weight: 700;
-      font-size: 18px;
-      color: #222;
+    .nav-logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav-logo {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
     }
 
     .nav-links a {
@@ -370,7 +378,9 @@
   <!-- Navigation -->
   <nav>
     <div class="nav-container">
-      <a class="nav-name" href="#">Yeojin Jung</a>
+      <a class="nav-logo-link" href="#">
+        <img src="favicon.png" alt="Home" class="nav-logo">
+      </a>
 
       <div class="nav-links">
         <a href="#about">About</a>
